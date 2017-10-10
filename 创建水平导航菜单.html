@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul{
+            list-style: none;/*去掉序列*/
+        }
+        #menu li{
+            width:120px;
+            height: 30px;
+            background: #cccccc;
+            float: left;
+            margin-right:1px ;
+            line-height: 30px;/*垂直水平居中*/
+        }
+        #menu a{
+            text-decoration: none;/*去下划线*/
+            width:100%;
+            height: 100%;
+            display: block;/*把行分成块*/
+            background: purple;
+            color: #fff;
+            text-indent: 20px;/*类似首行缩进*/
+        }
+        /*鼠标飘过会变*/
+        #menu a:hover{
+            background:orange;
+
+        }
+    </style>
+</head>
+<body>
+    <ul id="menu">
+        <li>
+            <a href="#">Link 1</a>
+        </li>
+        <li>
+            <a href="#">Link 2</a>
+        </li>
+        <li>
+            <a href="#">Link 3</a>
+        </li>
+        <li>
+            <a href="#">Link 4</a>
+        </li>
+    </ul>
+</body>
+</html>
