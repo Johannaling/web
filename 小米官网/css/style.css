@@ -34,8 +34,8 @@ img{
     background: #333333;
 }
 .main-menu{
-
-
+    overflow: hidden;
+    float: left;
 }
 .nav li{
     float: left;

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>弹出层</title>
+    <link rel="stylesheet" href="css/iconfontclose/iconfont.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul,ol{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        body {
+            font: 14px/1.5 "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+            color: #333;
+            background-color: #fff;
+            min-width: 1226px;
+
+
+        }
+        html{
+            font-size: 100%;
+            -ms-text-size-adjust: 100%;/* 移动端文本大小调节 */
+            -webkit-text-size-adjust: 100%;/* 浏览器文本大小调节 */
+            font-family: sans-serif;/* 字体样式 */
+        }
+        #mask{
+            position: fixed !important;
+            left:0;
+            top:0;
+            width: 100%;
+            height: 5994px;;
+            background: #000000;
+            opacity: 0.5;
+            filter: alpha(opacity=50);/* IE中的透明度语法 */
+            z-index:1040;
+        }
+        /* modal 开始 */
+        #modal{
+            width: 760px;
+            height:540px;
+            background: #ffffff;
+            position:fixed !important;
+            left:50%;
+            margin-left: -330px;
+            top:50%;
+            margin-top: -300px;
+            z-index:1050;/* 与屏幕垂直的视角 */
+        }
+        #modal-header{
+            height: 32px;
+            padding: 14px 20px;
+            background: #f5f5f5 ;
+        }
+        #modal-header .title{
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 32px;
+            color: #424242;
+        }
+        #modal-header .iconfont {
+            float: right;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-stroke-width: 0.2px;
+        }
+        #modal-header .close{
+            line-height: 30px;
+            text-align: center;
+            color: #757575;
+            cursor: pointer;
+            font-size: 100%;
+
+        }
+        #modal-header .close  .iconfont{
+            font-size: 24px;
+            font-weight: 200;
+            vertical-align: middle
+        }
+        /* modal 结束*/
+        /* content 开始 */
+        #content{
+            display: block;
+            position: relative;
+            max-height: 400px;
+            padding: 40px 60px;
+        }
+        #content h3{
+            color: #424242;
+            font-size: 32px;
+            text-align: center;
+        }
+        #content p{
+            margin: 0;
+            font-size: 18px;
+            text-align: center;
+        }
+        #content .menu{
+            margin: 30px auto 0;
+        }
+
+        #content .menu a{
+            width: 100%;
+            height:100%;
+            display: block;
+        }
+        #content .menu li{
+            float: left;
+            width: 140px;
+            height: 40px;
+            margin: 0 10px 20px;
+            line-height: 40px;
+            background-color: #eee;
+            text-align: center;
+            color: #757575;
+        }
+        #content .menu a:hover{
+            color: #ffffff;
+            background:#ff6700 ;
+        }
+        /* content 结束 */
+    </style>
+</head>
+<body>
+    <div id="modal">
+        <div id="modal-header">
+            <a class="close"><i class="iconfont icon-close"></i></a>
+            <span class="title">Select Region</span>
+        </div>
+        <div id="content">
+            <h3>Welcome to Mi.com</h3>
+            <p>Please select your country or region</p>
+            <ul class="menu">
+                <li><a href="#">Mainland China</a></li>
+                <li><a href="#">Hong Kong</a></li>
+                <li><a href="#">Taiwan</a></li>
+                <li><a href="#">Singapore</a></li>
+                <li><a href="#">Malaysia</a></li>
+                <li><a href="#">Philippines</a></li>
+                <li><a href="#">India</a></li>
+                <li><a href="#">Ukraine</a></li>
+                <li><a href="#">Global Home</a></li>
+                <li><a href="#">MENA</a></li>
+                <li><a href="#">Poland</a></li>
+                <li><a href="#">Ukraine</a></li>
+                <li><a href="#">Russia</a></li>
+                <li><a href="#">Vietnam</a></li>
+                <li><a href="#">Mexico</a></li>
+                <li><a href="#">Korea</a></li>
+                <li><a href="#">Egypt</a></li>
+                <li><a href="#">Thailand</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="mask"></div>
+</body>
+</html>
