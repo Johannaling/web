@@ -146,37 +146,99 @@ img{
 .site-header .header-sub-nav li{
     float: left;
 }
-.site-header .nav-item:hover .header-sub-nav{
-    display: block;
-    height: 100px;
+.site-header .header-sub-nav-inner{
+    height: 220px;
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
 }
-.site-header .pull-down-list {
+.site-header .nav-item:hover .header-sub-nav{
+    display: block;
+    height: 220px;
+}
+.site-header .product{
     background: #ffffff;
     z-index: 5;
 
 }
-.site-header .pull-down-list li{
-    clear: both;
-    height: auto;
-}
-.site-header .pull-down-list .title{
+.site-header .product .title{
     border: 1px solid #ff6700;
     color: #ff6700;
     background: #ffffff;
     position: absolute;
+    left: 60px;
     line-height: normal;
     width: 50px;
+    /*height: 20px;*/
     text-align: center;
 }
-.site-header .pull-down-list img{
+.site-header .product .max2 .title{
+    width: 100px;
+    left: 35px;
+}
+.site-header .product img{
     position: absolute;
     top: 40px;
     left: 7px;
+    width: 160px;
+    height: 110px;
+    border-right: 1px solid #e0e0e0;
 }
-.site-header .pull-down-list a{
+/*.site-header .note5x img{*/
+    /*width: 200px;*/
+/*}*/
+.site-header .note2 img{
+    border-right: none;
+}
+.site-header .hm4x img{
+    border-right: none;
+}
+.site-header .product a{
     height: 100px;
+}
+.site-header .product .name{
+    position: absolute;
+    top: 120px;
+    left: 35px;
+    font-size: 12px;
+    width: 100px;
+    height: 10px;
+    text-align: center;
+}
+.site-header .note5a .name{
+    width: 150px;
+    left: 20px;
+}
+.site-header .product .price{
+    position: absolute;
+    top: 140px;
+    left: 65px;
+    font-size: 12px;
+    width: 100px;
+    height: 10px;
+}
+.site-header .product1{
+    position: absolute;
+    left: 70px;
+}
+.site-header .product2{
+    position: absolute;
+    left: 270px;
+}
+.site-header .product3{
+    position: absolute;
+    left: 470px;
+}
+.site-header .product4{
+    position: absolute;
+    left: 670px;
+}
+.site-header .product5{
+    position: absolute;
+    left: 870px;
+}
+.site-header .product6{
+    position: absolute;
+    left: 1070px;
 }
 /* site-header 结束*/
 /*header-search 开始*/
@@ -204,6 +266,12 @@ img{
     background: transparent;
     float: right;
     cursor: pointer;
+    transition: background 0.2s ease;
+    font-weight: bold;
+}
+.header-search .search-btn:hover{
+    background: #ff6700;
+    color: #ffffff;
 }
 .header-search .search-keywords{
     position: absolute;
@@ -231,6 +299,9 @@ img{
     line-height: 25px;
     padding-left: 10px;
     font-size: 12px;
+}
+.header-search .search-list li:hover{
+    background: #e0e0e0;
 }
 /*header-search 结束*/
 /* categoryList 开始 */
