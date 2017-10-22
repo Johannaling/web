@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+
+    <script>
+
+        /*var x=Math.random();
+        var y=Math.random();
+        x>y?console.log(x):console.log(y);*/
+        /*var today = new Date();   //获取当天日期
+        var year = today.getFullYear();
+        function getLeapYear(){
+        if((year % 4 == 0 && year % 100 != 0)||year%400==0){
+            return true;
+        }}*/
+        /*
+         1.	  编写一个函数 f(x) = 4x2+3x+2，使用户通过提示对话框输入x的值，能得到相应的计算结果。
+       */
+        /*var sum ,x;
+        x=prompt("请输入一个数");
+        function fac(x) {
+            sum=4*Math.pow(x,2)+3*x+2;
+            return sum ;
+        }
+        document.write(fac(x));*/
+        /*2.	编写程序，艰据用户输入的一个数字(0~6)．通过警示对话框显示对应的星期几(0: 星期日; 1: 星期一;……6: 星期六;)。*/
+        /*var x;
+        prompt(x="请输入0-6中的一个数");
+        function fac(x) {
+            switch(x){
+                case(0):document.write("星期日");break;
+                case(1):document.write("星期一");break;
+                case(2):document.write("星期二");break;
+                case(3):document.write("星期三");break;
+                case(4):document.write("星期四");break;
+                case(5):document.write("星期五");break;
+                case(6):document.write("星期六");break;
+            }
+        }
+        fac(x);*/
+        /*3.	编写一个判断某个非负整数是否能够同时被3,5,7整除的函数，然后在页面上输出
+        1~1000之间所有能同时被3,5,7整除的整数，并要求每行显示6个这样的数。*/
+        /*function fn(x) {
+                if(x%3==0&&x%5==0&&x%7==0){
+                    return true;}
+                    return flase;}
+          for()
+        fn();*/
+        /*7.	斐波纳契（Fibonacci）数列的第一项是1，第二项是1，以后各项都是前两项的和。
+        试用递归函数和非递归函数各编写一个程序，求斐波纳契数列第N项的值*/
+        /*var num;
+        num=prompt("Please enter a number");
+        function fac(n) {
+            if(n ==1||n==2){
+                return 1;
+            }
+            return fac
+        }
+        console.log()*/
+        /*9.	利用全局变量和函数，设计模拟幸运数字机游戏。设幸运数字为8，
+        每次由计算机随机产生3个1-9之间(包括1和9）的随机数，当这3个随机数中有一个数字为8时，就算赢了一次，要求利用函数计算获胜率*/
+        /*1.	编写程序，根据用户输入的数值，计算其平方、平方根和自然对数。*/
+        /*var num;
+        num =prompt("Please enter a number");
+        console.log(Math.pow(num ,2),Math.sqrt(num),Math.log(num));*/
+        /*2.	使用Math对象的random()方法编制一个产生0~100之间（含0,100）的随机整数的函数。*/
+        /*var num;
+        function ran(low ,hight) {
+            num=Math.floor(Math.random()*(hight-low)+low);
+            return num;
+        }
+        ran(0,100);
+        console.log(num);*/
+        /*3.	设计一个页面，在页面上显示信息“现在是XXXX年XX月XX日Xx点XX分XX秒（星期X)，欢迎您的到访！*/
+        var New=new Date();
+        document. write("现在是"+New.getFullYear()+"年"+New.getMonth()+"月"
+            +New.getDay()+"日"+New.getHours()+"点" +New.getMinutes()+"分"
+            +New.getSeconds()+"秒（星期"+"),欢迎您的到访！")
+    </script>
+</body>
+</html>
