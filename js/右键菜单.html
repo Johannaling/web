@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>右键菜单</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        li{
+            list-style: none;
+        }
+        #menu{
+            width: 120px;
+            border: 1px solid #000000;
+            display: none;
+            position: absolute;
+            left:0;
+            top:0;
+        }
+        #menu li{
+            height: 30px;
+            border-bottom: 1px dashed #ccc;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+        }
+        #menu li:hover{
+            background: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <ul id="menu">
+        <li>打开</li>
+        <li>下载</li>
+        <li>推送到设备</li>
+        <li>分享</li>
+        <li>删除</li>
+    </ul>
+    <script>
+        var oMenu=document.getElementById('menu');
+        var aLi=oMenu.getElementsByTagName('li');
+
+    </script>
+</body>
+</html>
