@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>change-length</title>
+</head>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        div{
+            width: 100px;
+            height: 50px;
+            background: #ff6700;
+            margin-bottom: 10px;
+        }
+
+    </style>
+<body>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+    <script>
+        var oDiv1=document.getElementById('div1');
+        var oDiv2=document.getElementById('div2');
+        var oDiv3=document.getElementById('div3');
+        function change(elem){
+            elem.onmouseover=function () {
+                clearInterval(elem.timer);
+                elem.timer=setInterval(function () {
+                    elem.style.width=elem.offsetWidth+10+"px";
+                    if(elem.offsetWidth>=300){
+                        clearInterval(elem.timer);
+                    }
+                },50);
+            };
+            elem.onmouseout=function () {
+                clearInterval(elem.timer);
+                elem.timer=setInterval(function () {
+                    elem.style.width=elem.offsetWidth-10+"px";
+                    if(elem.offsetWidth<=100){
+                        clearInterval(elem.timer);
+                    }
+                },50);
+            }
+        }
+        change(oDiv1);
+        change(oDiv2);
+        change(oDiv3);
+    </script>
+</body>
+</html>
