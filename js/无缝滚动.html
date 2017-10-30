@@ -20,24 +20,13 @@
             position: relative;
             margin: 100px auto;
             border: 1px solid;
+            /*overflow: hidden;*/
         }
-        #imgs li{
+        #imgs {
             float: left;
-        }
-        #imgs img{
-            /*display: block;*/
-            float: left;
-        }
-        #imgs .selected{
-            display: block;
-        }
-        #tab{
-            height:20px;
             position: absolute;
-            bottom:10px;
-            right: 10px;
         }
-        #tab li ,#arrows span {
+         #arrows span {
             width:20px;
             height: 20px;
             background: #000000;
@@ -48,34 +37,50 @@
             margin-right:5px;
             cursor: pointer;
         }
-        #tab .selected{
-            background: #ff6700;
-        }
         #arrows{
             position: absolute;
             bottom: 10px;
-            left: 10px;
+            right: 10px;
         }
     </style>
 </head>
 <body>
     <div id="container">
-        <ul id="imgs">
-            <li><img src="img/1.jpg" alt="" class="selected"></li>
-            <li><img src="img/2.jpg" alt=""></li>
-            <li><img src="img/3.jpg" alt=""></li>
-            <li><img src="img/4.jpg" alt=""></li>
-        </ul>
-        <ul id="tab">
-            <li class="selected">1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-        </ul>
+        <div id="imgs">
+            <img src="img/1.jpg" alt="" class="selected">
+            <img src="img/2.jpg" alt="">
+            <img src="img/3.jpg" alt="">
+            <img src="img/4.jpg" alt="">
+        </div>
         <div id="arrows">
-            <span id="prev">&lt</span>
-            <span id="next">&gt</span>
+            <span id="left">&lt;</span>
+            <span id="right">&gt;</span>
         </div>
     </div>
+    <script>
+        var oImgs=document.getElementById('imgs');
+        var oLeft=document.getElementById('left');
+        var oRight=document.getElementById('right');
+        var direction=10;
+        oImgs.innerHTML += oImgs.innerHTML;
+        oImgs.style.width = oImgs.offsetWidth * 2 + 'px';
+        setInterval(function(){
+            oImgs.style.left = (oImgs.offsetLeft - direction) + 'px';
+            if(-oImgs.offsetLeft >= oImgs.offsetWidth / 2){
+                oImgs.style.left = 0;
+            }
+            if(oImgs.offsetLeft > 0){
+                oImgs.style.left = -oImgs.offsetWidth / 2 - direction + 'px';
+            }
+        }, 80);
+
+        oLeft.onmouseover = oRight.onmouseover = function(){
+            if(this === oLeft){
+                direction = 10;
+            }else{
+                direction = -10;
+            }
+        };
+    </script>
 </body>
 </html>
