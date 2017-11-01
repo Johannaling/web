@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>折叠菜单</title>
+    <style>
+        *{
+            padding: 0;
+            margin:0;
+        }
+        li{
+            list-style: none;
+        }
+        #container{
+            width: 200px;
+            border:1px solid;
+            text-align: center;
+            margin: 100px auto;
+        }
+        #container h3{
+            background: #000000;
+            color: #ffffff;
+            cursor: pointer;
+        }
+        #container .submenu li:hover{
+            background: #cccccc;
+        }
+        #container .submenu ul{
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+<ul id="container">
+    <li class="submenu">
+        <h3>管理区</h3>
+        <ul>
+            <li>001</li>
+            <li>002</li>
+            <li>003</li>
+        </ul>
+    </li>
+    <li class="submenu">
+        <h3>交流区</h3>
+        <ul>
+            <li>001</li>
+            <li>002</li>
+            <li>003</li>
+        </ul>
+    </li>
+</ul>
+<script src="jslib.js"></script>
+<script>
+    var oContainer=document.getElementById('container');
+    var aH3=oContainer.getElementsByTagName('h3');
+    for(var i=0;i<aH3.length;i++){
+        aH3[i].bFlag=false;//(关闭是false)
+        aH3[i].onclick=function () {
+            var oUl=next(this);
+          if(this.bFlag){
+              oUl.style.display='none';
+          }
+          else{
+              oUl.style.display='block';
+          }
+          this.bFlag = !this.bFlag;
+        };
+    }
+    oContainer.onselectstart=function(){
+        return false;
+    }
+
+</script>
+</body>
+</html>
