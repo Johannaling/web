@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拖拽</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        #drag{
+            width: 200px;
+            height: 200px;
+            background: #e53935;
+            cursor: pointer;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="drag"></div>
+    </div>
+    <script src="wichung-1.0.js"></script>
+    <script>
+        var oDrag=id('drag');
+        oDrag.onmousedown=function (e) {
+            e=e||window.event;
+            var iDisX=e.clientX-oDrag.offsetLeft;
+            var iDisY=e.clientY-oDrag.offsetTop;
+            document.onmousemove=function (e) {
+                e=e||window.event;
+                oDrag.style.left= e.clientX-iDisX +'px';
+                oDrag.style.top= e.clientY-iDisY+'px';
+            };
+            oDrag.onmouseup=function () {
+                document.onmousemove=null;
+            };
+        };
+
+    </script>
+</body>
+</html>
