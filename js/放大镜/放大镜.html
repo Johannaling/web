@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>放大镜</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border: 0;
+        }
+        #small,#big{
+            float: left;
+            width: 400px;
+            height: 400px;
+        }
+        #small{
+            position: relative;
+            margin-right: 10px;
+        }
+        #drag{
+            width: 200px;
+            height: 200px;
+            background: blue;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: .2;
+            filter:alpha(opacity=20);
+            cursor: move;
+            display: none;
+        }
+        #big{
+            display: none;
+            overflow: hidden;
+            position: relative;
+        }
+        #big-pic{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #mark{
+            width: 400px;
+            height: 400px;
+            background: #e53935;
+            opacity: 0;
+            filter:alpha(opacity=0);
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="small">
+        <img src="1.jpg" alt="">
+        <div id="drag"></div>
+        <div id="mark"></div>
+        <!--为了IE6-8的兼容性问题和冒泡在外面套了一个面罩盖住，不来回执行over和out的切换
+        {1.直接加一个mask 2.加一个mask，在mask上绑定动作}-->
+    </div>
+    <div id="big">
+        <img src="2.jpg" alt="" id="big-pic">
+    </div>
+
+
+    <script>
+        oDrag=document.getElementById('drag');
+        oSmall=document.getElementById('small');
+        oBig=document.getElementById('big');
+        oBigPic=document.getElementById('big-pic');
+        oSmall.onmouseover=function () {
+           oDrag.style.display='block';
+           oBig.style.display='block';
+        };
+        oSmall.onmouseout=function () {
+            oDrag.style.display='none';
+            oBig.style.display='none';
+        };
+        oSmall.onmousemove=function (e) {
+            e=e||window.event;
+            var left=e.clientX-oDrag.offsetWidth/2;
+            var top=e.clientY-oDrag.offsetHeight/2;
+            if (left<0){
+                left=0;
+            }
+            if (top<0){
+                top=0;
+            }
+            var maxX=oSmall.offsetWidth-oDrag.offsetWidth;
+            if (left>maxX){
+                left=maxX;
+            }
+            var maxY=oSmall.offsetHeight-oDrag.offsetHeight;
+            if (top>maxY){
+                top=maxY;
+            }
+            oDrag.style.left=left+'px';
+            oDrag.style.top=top+'px';
+
+            // 小图left / maxX = 大图left? / (大图宽度 - big div宽度)
+            var fScaleX=left/maxX;
+            var fScaleY=top/maxY;
+            oBigPic.style.left=-fScaleX*(oBigPic.offsetWidth-oBig.offsetWidth)+'px';
+            oBigPic.style.top=-fScaleY*(oBigPic.offsetHeight-oBig.offsetHeight)+'px';
+        }
+    </script>
+</body>
+</html>
