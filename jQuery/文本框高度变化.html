@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文本框高度变化</title>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+            font:normal 12px/17px Arial;
+        }
+        #container{
+            width: 300px;
+            margin: 100px;
+        }
+        #change{
+            width: 100%;
+            overflow:hidden;
+            margin-bottom: 2px;
+        }
+        #change span{
+            display:block;
+            float:left;
+            margin:0 2px;
+            padding:4px 10px;
+            background:#898989;
+            cursor:pointer;
+            color:white;
+        }
+        textarea{
+            width:300px;
+            height:100px;
+            border:1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="change">
+            <span id="bigger">放大</span>
+            <span id="smaller">缩小</span>
+        </div>
+        <textarea  id="text" cols="8" rows="20">多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.</textarea>
+    </div>
+
+
+    <script src="jquery-3.2.1.js"></script>
+    <script>
+        /*
+         文本框高度变化练习，功能：
+         1.完成点击放大按钮，文本域高度每次加50像素，直到500像素为止
+         2.完成点击缩小按钮，文本框高度每次减少50像素，直到50像素为止
+         */
+
+        /*
+         文本框高度变化练习，功能：
+         1.完成点击放大按钮，文本域高度每次加50像素，直到500像素为止
+         2.完成点击缩小按钮，文本框高度每次减少50像素，直到50像素为止
+         3.除了基本的放大与缩小效果外，还要加入缓冲动画效果，要求在0.4秒内完成动画效果
+         */
+
+        /*$(function () {
+            var $text=$('#text');
+            $('#bigger').on('click',function () {
+                $text.height($text.height()<500?$text.height()+50:$text.height());
+            });
+            $('#smaller').on('click',function () {
+                $text.height($text.height()>50?$text.height()-50:$text.height());
+            })
+        });*/
+
+        $(function () {
+            var $text=$('#text');
+            var $bigger=$text.height($text.height()<500?$text.height()+50:$text.height());
+            var $smaller=$text.height($text.height()>50?$text.height()-50:$text.height());
+            $('#bigger').on('click',function () {
+                if(!$text.is(':animated')){
+                    if( $text.height() < 500 ){
+                        $text.animate({ height : "+=50" },400);
+                    }
+                }
+            });
+            $('#smaller').on('click',function () {
+                if(!$text.is(':animated')){
+                    if( $text.height() > 50 ){
+                        $text.animate({ height : "-=50" },400);
+                    }
+                }
+            });
+        })
+
+
+    </script>
+</body>
+</html>
