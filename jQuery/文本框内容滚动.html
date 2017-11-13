@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文本框内容滚动</title>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+            font:normal 12px/17px Arial;
+        }
+        #container{
+            width: 300px;
+            margin: 100px;
+        }
+        #change{
+            width: 100%;
+            overflow:hidden;
+            margin-bottom: 2px;
+        }
+        #change span{
+            display:block;
+            float:left;
+            margin:0 2px;
+            padding:4px 10px;
+            background:#898989;
+            cursor:pointer;
+            color:white;
+        }
+        textarea{
+            width:300px;
+            height:100px;
+            border:1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="change">
+            <span id="up">向上</span>
+            <span id="down">向下</span>
+        </div>
+        <textarea  id="text" cols="8" rows="20">多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.</textarea>
+    </div>
+
+    <script src="jquery-3.2.1.js"></script>
+    <script>
+        /*
+         内容滚动练习，功能：
+         1.完成点击向上按钮，文本域内容向上滚动50像素
+         2.完成点击向下按钮，文本域内容向下滚动50像素
+         3.除了基本的滚动效果外，还要加入缓冲动画效果，要求在0.4秒内完成动画效果
+         */
+
+        $(function(){
+            var $text=$('#text');
+            $('#up').on('click',function () {
+                /*$text.scrollTop($text.scrollTop()+'50')*/
+                if(!$text.is(':animated')){
+                    $text.animate({scrollTop:'+=50'},400)
+                }
+            });
+            $('#down').on('click',function () {
+                /*$text.scrollTop($text.scrollTop()-'50')*/
+                if(!$text.is(':animated')){
+                    $text.animate({scrollTop:'-=50'},400)
+                }
+            })
+        })
+    </script>
+
+</body>
+</html>
