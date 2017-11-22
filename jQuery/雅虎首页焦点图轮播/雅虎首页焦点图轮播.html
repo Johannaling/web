@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>雅虎首页焦点图轮播</title>
+    <link type="text/css" rel="stylesheet" href="css/bd.css">
+</head>
+<body>
+    <div id="bd">
+        <div class="cons">
+            <div class="mod">
+                <!-- 焦点图模块 start -->
+                <div class="mod-1">
+                    <div class="inner fixclear">
+                        <div class="slide fixclear">
+                            <ul class="pics">
+                                <li style="display: none; "><a href="http://ks.cn.yahoo.com/question/17504629.html" target="_blank" name="ks/jd/1"><img src="images/indexfocus20111002a.jpg" alt="教教你怎么对付小三"></a></li>
+                                <li style="display: none; "><a href="http://ks.cn.yahoo.com/question/16312560.html" target="_blank" name="ks/jd/2"><img src="images/indexfocus20111002b.jpg" alt="从手可以看出哪些身体疾病？"></a></li>
+                                <li style=""><a href="http://ks.cn.yahoo.com/question/13591758.html" target="_blank" name="ks/jd/3"><img src="images/indexfocus20111002c.jpg" alt="半夜惊醒 千万不要去卫生间！"></a></li>
+                                <li style="display: none; "><a href="http://ks.cn.yahoo.com/newspic/ks/947/1/" target="_blank" name="ks/jd/4"><img src="images/indexfocus20111002d.jpg" alt="佛的各种手势代表什么？"></a></li>
+                                <li style="display: none; "><a href="http://ks.cn.yahoo.com/newspic/ks/907/1/" target="_blank" name="ks/jd/5"><img src="images/indexfocus20111002e.jpg" alt="哪些小习惯会影响你的桃花运？"></a></li>
+                            </ul>
+                            <ul class="tabs">
+                                <li><a href="http://ks.cn.yahoo.com/question/17504629.html" target="_blank" name="ks/jd/1">教教你怎么对付小三</a></li>
+                                <li><a href="http://ks.cn.yahoo.com/question/16312560.html" target="_blank" name="ks/jd/2">从手可以看出哪些身体疾病？</a></li>
+                                <li class="on"><a href="http://ks.cn.yahoo.com/question/13591758.html" target="_blank" name="ks/jd/3">人必须戒掉的17个坏习惯</a></li>
+                                <li><a href="http://ks.cn.yahoo.com/newspic/ks/947/1/" target="_blank" name="ks/jd/4">世界末日理论十大真相</a></li>
+                                <li><a href="http://ks.cn.yahoo.com/newspic/ks/907/1/" target="_blank" name="ks/jd/5">生活中须注意的邪门事</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../jquery-3.2.1.js"></script>
+    <script>
+        $(function () {
+            var index=0;
+            var timer;
+            var $tabs = $('.tabs li');
+            $tabs.on('mouseover', function () {
+                var $li=$(this);
+                setTimeout(function () {
+                    index = $li.index();
+                    $li.addClass('on').siblings().removeClass('on');
+                    $($('.pics li')[index]).show().siblings().hide();
+                },60);
+
+            });
+            play();
+            $tabs.add($('.pics li')).on('hover', function () {
+                clearInterval(timer);
+            },function () {
+                play();
+            });
+            function play() {
+                var idx = $tabs.index($tabs.filter('.on'));
+                timer = setInterval(function () {
+                    $($tabs[idx++]).trigger('mouseover');
+                    if (idx == $tabs.length) {
+                        idx = 0;
+                    }
+                }, 1000)
+            }
+
+        });
+    </script>
+</body>
+</html>
