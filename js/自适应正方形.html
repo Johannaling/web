@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自适应正方形</title>
+    /*一个div一个方法*/
+    <style>
+        body {
+            margin: 0;
+        }
+
+        #div1 {
+            background: #ff0000;
+            padding-top: 100%;
+        }
+
+        #div2 {
+            background: #00ff00;
+            overflow: hidden;
+        }
+
+        #div2::after {
+            content: '';
+            display: block;
+            margin-top: 100%;
+        }
+
+        #div3{
+            background: #ffff00;
+            height: 100vw;/*视口宽度css3*/
+        }
+        /* vm vh vmax vmin */
+        /* px  %    */
+    </style>
+</head>
+
+<body>
+<div id="div1"></div>
+
+<div id="div2"></div>
+
+<div id="div3"></div>
+</body>
+
+</html>
