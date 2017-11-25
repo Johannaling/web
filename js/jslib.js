@@ -64,3 +64,17 @@ function delCookie(key) {
     date.setDate(date.getDate()-100);
     document.cookie=key+'=null;expires='+date.toUTCString();
 }
+
+
+//实现深拷贝
+function clone(obj){
+    var newObj = {};
+    for(var p in obj){
+        if(typeof obj[p] == 'object'){
+            newObj[p] = clone(obj[p]);
+        }else{
+            newObj[p] = obj[p];
+        }
+    }
+    return newObj;
+}
