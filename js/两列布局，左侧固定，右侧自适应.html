@@ -9,24 +9,26 @@
             padding: 0;
         }
         #main{
-            display:table;
+            /*display:table;*//*4*/
             width: 100%;
+            display:flex ;/*5*/
         }
         #left{
             width: 300px;
             height: 300px;
             background: #ff0000;
-            /*float: left;*/
-            /*position: absolute;*/
-            display: table-cell;
+            /*float: left;*//*1*/
+            /*position: absolute;*//*2*/
+            /*display: table-cell;*//*4*/
         }
         #right{
             height: 300px;
             background: #00ff00;
             margin-left: 310px;
-            /*margin-left: 310px;*/
-            /*margin-top: -300px;*/
-            display: table-cell;
+            /*margin-left: 310px;*//*1*//*2*//*3*/
+            /*margin-top: -300px;*//*3*/
+            /*display: table-cell;*//*4*/
+            flex-grow: 1;/*5*/
         }
     </style>
 </head>
