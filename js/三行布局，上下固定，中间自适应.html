@@ -8,86 +8,97 @@
         margin: 0;
         padding: 0;
     }
-
+    body,html,#main{
+        height: 100%;
+    }/*2*/
     #top,
     #bottom {
         height: 30px;
         background: #ff0000;
-        position: fixed;
-        width: 100%;
+        /*position: fixed;*//*1*/
+        width: 100%;/*2*/
     }
 
     #top {
-        top: 0;
+        /*top: 0;*//*1*/
     }
 
     #bottom {
-        bottom: 0;
+        /*bottom: 0;*//*1*/
     }
 
     #center {
         background: #cccccc;
-        position: absolute;
+       /* position: absolute;
         top: 30px;
         bottom: 30px;
         left: 0;
-        right: 0;/*用绝对定位把内容撑开*/
-        overflow: scroll;/*溢出滚动*/
+        right: 0;!*用绝对定位把内容撑开*!
+        overflow: scroll;!*溢出滚动*!*//*1*/
+        flex-grow: 1;/*2*/
+        overflow: scroll;
+    }
+    #main{
+        display: flex;
+        flex-direction: column;/*2*/
     }
 </style>
 </head>
 <body>
-<div id="top"></div>
-<div id="center">
-    center<br>
-    center<br>
-    center<br>
-    center<br>
-    center<br>
-    center<br>
-    center<br>
-    center<br>
-    center<br>
-    center<br>
-    center<br>
-    center<br>
-    center<br>
-    center<br>
-    center<br>
-    center<br>
-    center<br>
-    center<br>
-    center<br>
-    center<br>
-    center<br>
-    center<br>
-    center<br>
-    center<br>
-    center<br>
-    center<br>
-    center<br>
-    center<br>
-    center<br>
-    center<br>
-    center<br>
-    center<br>
-    center<br>
-    center<br>
-    center<br>
-    center<br>
-    center<br>
-    center<br>
-    center<br>
-    center<br>
-    center<br>
-    center<br>
-    center<br>
-    center<br>
-    center<br>
-    center<br>
-    center<br>
-    center<br>
+<div id="main">
+    <div id="top"></div>
+    <div id="center">
+        center<br>
+        center<br>
+        center<br>
+        center<br>
+        center<br>
+        center<br>
+        center<br>
+        center<br>
+        center<br>
+        center<br>
+        center<br>
+        center<br>
+        center<br>
+        center<br>
+        center<br>
+        center<br>
+        center<br>
+        center<br>
+        center<br>
+        center<br>
+        center<br>
+        center<br>
+        center<br>
+        center<br>
+        center<br>
+        center<br>
+        center<br>
+        center<br>
+        center<br>
+        center<br>
+        center<br>
+        center<br>
+        center<br>
+        center<br>
+        center<br>
+        center<br>
+        center<br>
+        center<br>
+        center<br>
+        center<br>
+        center<br>
+        center<br>
+        center<br>
+        center<br>
+        center<br>
+        center<br>
+        center<br>
+        center<br>
+    </div>
+    <div id="bottom"></div>
 </div>
-<div id="bottom"></div>
+
 </body>
 </html>
