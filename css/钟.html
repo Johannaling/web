@@ -14,9 +14,14 @@
         #clock{
             height: 400px;
             width: 400px;
+            margin: 100px auto;
+            position: relative;
+        }
+        #dial{
+            height: 400px;
+            width: 400px;
             border: 2px solid;
             border-radius: 50%;
-            margin: 100px auto;
             position: relative;
         }
         ul li{
@@ -36,11 +41,11 @@
             height: 12px;
         }
         #hour{
-            width: 14px;
+            width: 12px;
             height: 80px;
             background: #000000;
             position: absolute;
-            left: 193px;
+            left: 198px;
             top: 120px;
         }
         #minute{
@@ -48,7 +53,7 @@
             height: 120px;
             background-color: #999;
             position: absolute;
-            left: 196px;
+            left: 200px;
             top: 80px;
         }
         #second{
@@ -56,7 +61,7 @@
             height: 140px;
             background-color: red;
             position: absolute;
-            left: 198px;
+            left: 202px;
             top: 60px;
         }
         #clock div{
@@ -83,11 +88,9 @@
     var oHour=document.getElementById('hour');
     var oMinute=document.getElementById('minute');
     var oSecond=document.getElementById('second');
-    var lis="";
     for (var i=0;i<60;i++){
-        lis +="<li style='transform: rotate("+6*i+"deg);'></li>";
+        oDial.innerHTML +="<li style='transform: rotate("+6*i+"deg);'></li>";
     }
-    oDial.innerHTML=lis;
 
     run();
     setInterval(run,1000);
