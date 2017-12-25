@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>旋转木马</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background-color: #999999;
+            perspective: 1000px;
+            perspective-origin: 50% -200px;
+        }
+        #container{
+            width: 125px;
+            height: 125px;
+            position: relative;
+            margin: 200px auto;
+            -webkit-transform-style: preserve-3d;
+            -moz-transform-style: preserve-3d;
+            -ms-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+           /* -webkit-transition: all 1s linear;
+            -moz-transition: all 1s linear;
+            -ms-transition: all 1s linear;
+            -o-transition: all 1s linear;
+            transition: all 1s linear;*/
+            -webkit-animation: rotate 4s linear 2s infinite forwards;
+            -o-animation:rotate 4s linear 2s infinite forwards;
+            animation:rotate 4s linear 2s infinite forwards;
+
+        }
+        @keyframes  rotate{
+            from{
+
+            }
+            to{
+                -webkit-transform: rotateY(360deg);
+                -moz-transform: rotateY(360deg);
+                -ms-transform: rotateY(360deg);
+                -o-transform: rotateY(360deg);
+                transform: rotateY(360deg);
+            }
+        }
+        #container img{
+            width: 125px;
+            height: 125px;
+            position: absolute;
+            -webkit-transition: all 1s linear;
+            -moz-transition: all 1s linear;
+            -ms-transition: all 1s linear;
+            -o-transition: all 1s linear;
+            transition: all 1s linear;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <script>
+        var oContainer=document.getElementById('container');
+        var aImg=document.getElementsByTagName('img');
+        var counter=0;
+        for (var i=0;i<9;i++){
+            var oImg=new Image();
+            oImg.onload=function () {
+                counter++;
+                if (counter==9){
+                    loadSuccess();
+                }
+            };
+            oImg.src="img2/"+(i+1)+".jpg";
+            oContainer.appendChild(oImg);
+        }
+        /*var num=0;
+        oContainer.onclick=function () {
+            num++;
+            oContainer.style.transform="rotateY("+num*40+"deg)"
+        };*/
+        oContainer.onmouseover=function () {
+            oContainer.style.animationPlayState="paused";
+            bigger();
+        };
+        oContainer.onmouseout=function () {
+            oContainer.style.animationPlayState="running";
+            /*origin();*/
+        };
+        /*var iNowIndex=0;*/
+        function loadSuccess() {
+           /* var aImg=document.getElementsByTagName('img');*/
+            for (var i=0;i<aImg.length;i++){
+                aImg[i].style.transform="rotateY("+40*(i+1)+"deg) translateZ(180px)";
+                aImg[i].style.transitionDelay=i*100+"ms";
+            }
+        }
+        function bigger() {
+            var iNowIndex;
+            for(var i=0;i<aImg.length;i++){
+                aImg[i].onmouseover=function () {
+                    iNowIndex=this.index;
+                    this.style.transform="rotateY("+40*(iNowIndex+1)+"deg) translateZ(180px) scale(2,2)"
+                }
+            }
+        }
+
+
+
+    </script>
+</body>
+</html>
