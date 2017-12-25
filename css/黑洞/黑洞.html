@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>黑洞</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #container{
+           position: relative;
+        }
+        #black-hole{
+            width: 200px;
+            margin: 200px auto;
+            display: none;
+        }
+        #black-hole img{
+            width: 200px;
+            height: 200px;
+        }
+
+        #pics img{
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            margin-top: 10px;
+
+
+        }
+        #pics img:nth-child(1){
+            left: 0;
+            top: 25px;
+        }
+        #pics img:nth-child(2){
+            left: 0;
+            top: 330px;
+        }
+        #pics img:nth-child(3){
+            left: 1000px;
+            top: 330px;
+        }
+        #pics img:nth-child(4){
+            left: 1000px;
+            top: 25px;
+        }
+        @keyframes blackhole {
+            from{
+                width: 200px;
+                height: 200px;
+            }
+            80%{
+                transform: rotate(720deg) scale(6.5);
+            }
+            to{
+                transform: rotate(720deg) scale(0);
+
+            }
+        }
+        @keyframes change{
+            from{
+
+            }
+            50%{
+                /*transform: translate(50% 50%) scale(0.5);*/
+                left: 40%;
+                top: 40%;
+                transform:  scale(0.5);
+            }
+            to{
+                left: 40%;
+                top: 40%;
+                transform: scale(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <input type="text" id="search">
+        <button id="btn">搜索</button>
+
+        <div id="pics">
+            <img src="img/1.jpg" alt="">
+            <img src="img/2.jpg" alt="">
+            <img src="img/3.jpg" alt="">
+            <img src="img/4.jpg" alt="">
+            
+        </div>
+        <div id="black-hole">
+            <img src="img/blackhole.png" alt="">
+        </div>
+    </div>
+    <script>
+        var oSearch=document.getElementById('search');
+        var oBtn=document.getElementById('btn');
+        var oBlackHole=document.getElementById('black-hole');
+        var oPics=document.getElementById('pics');
+        var aImg=oPics.getElementsByTagName('img');
+
+        oBtn.onclick=function () {
+            if (oSearch.value=='黑洞'){
+                oBlackHole.style.display="block";
+                oBlackHole.style.animation="blackhole 6s linear forwards ";
+                for (var i=0;i<aImg.length;i++){
+                    aImg[i].style.animation="change 4.4s linear 1.5s"
+                }
+            }
+        };
+
+
+    </script>
+</body>
+</html>
