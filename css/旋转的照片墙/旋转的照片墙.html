@@ -11,6 +11,10 @@
         html,body{
             width: 100%;
             height: 100%;
+
+        }
+        body{
+            position: relative;
         }
         #container{
             width: 100%;
@@ -18,6 +22,7 @@
             background: #aabbcc;
             position: relative;
         }
+
         #container .ThumbImg{
             width: 125px;
             height: 125px;
@@ -35,14 +40,51 @@
             transition: all 1s ease ;
             cursor: pointer;
         }
+        div span{
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+            opacity: 0;
+
+
+        }
+        #prev,#next{
+            width: 60px;
+            height: 60px;
+            background: white;
+            font-size: 80px;
+            position: absolute;
+            top: 50%;
+            margin-top: -30px;
+            text-align: center;
+            line-height: 55px;
+
+        }
+        #prev{
+            left:0;
+            -webkit-border-radius:0 8px 8px 0;
+            -moz-border-radius:0 8px 8px 0;
+            border-radius:0 8px 8px 0;
+        }
+        #next{
+            right: 0;
+            -webkit-border-radius:8px 0 0 8px;
+            -moz-border-radius:8px 0 0 8px;
+            border-radius:8px 0 0 8px;
+        }
     </style>
 </head>
 <body>
     <div id="container"></div>
+    <div id="prev">&lt</div>
+    <div id="next">&gt</div>
+
     <script>
         var ROW=4;
         var COL=6;
         var NUM=24;
+        var Thumb_Width=125,Thumb_Height=125,Big_Width=750,Big_Height=500;
         var count=0;
         var oContainer= document.getElementById('container');
         //把图片都加载完成
@@ -64,6 +106,11 @@
             };
             oBigImg.src="img/"+(i+1)+".jpg";*/
         }
+        var aThumbImg;
+        var oThumbWidth;
+        var oThumbHeight;
+        var fColGap;
+        var fRowGap;
         function loadSuccess() {
             //把图片加进DOM结构
             for (var i=0;i<ROW;i++){
@@ -75,21 +122,66 @@
                         row:i,
                         col:j
                     };
+                    oDiv.innerHTML="<span></span>";
+                    oDiv.index=i*COL+j+1;
                     oContainer.appendChild(oDiv);
                 }
             }
             //有飞进的效果并排列每个图片的位置
-            var aThumbImg=document.getElementsByClassName('ThumbImg');
-            var oThumbWidth=aThumbImg[0].offsetWidth;
-            var oThumbHeight=aThumbImg[0].offsetHeight;
-            var fColGap=(oContainer.offsetWidth-COL*oThumbWidth)/(COL+1);
-            var fRowGap=(oContainer.offsetHeight-ROW*oThumbHeight)/(ROW+1);
+            aThumbImg=document.getElementsByClassName('ThumbImg');
+            oThumbWidth=aThumbImg[0].offsetWidth;
+            oThumbHeight=aThumbImg[0].offsetHeight;
+            fColGap=(oContainer.offsetWidth-COL*oThumbWidth)/(COL+1);
+            fRowGap=(oContainer.offsetHeight-ROW*oThumbHeight)/(ROW+1);
             for(var i=23;i>=0;i--){
                 aThumbImg[i].style.transitionDelay=(NUM-i)*100+"ms";
                 aThumbImg[i].style.left=(oThumbWidth+fColGap)*aThumbImg[i].pos.col+fColGap+"px";
                 aThumbImg[i].style.top=(oThumbHeight+fRowGap)*aThumbImg[i].pos.row+fRowGap+"px";
-                aThumbImg[i].style.transform="rotate("+(Math.random()*40-20)+"deg)"
+                aThumbImg[i].style.transform="rotate("+(Math.random()*40-20)+"deg)";
             }
+        }
+
+        var fBigColGap=(oContainer.offsetWidth-Big_Width)/2;
+        var fBigRowGap=(oContainer.offsetHeight-Big_Height)/2;
+        var bFlag=true;
+        oContainer.onclick=function (e) {
+            if (this === e.target){
+                return false;
+            }else {
+                if(bFlag){
+                    for (var i=0;i<aThumbImg.length;i++){
+                        aThumbImg[i].style.transitionDelay="0ms";
+                        aThumbImg[i].style.left=fBigColGap+Thumb_Width*aThumbImg[i].pos.col+"px";
+                        aThumbImg[i].style.top=fBigRowGap+Thumb_Height*aThumbImg[i].pos.row+"px";
+                        aThumbImg[i].style.transform="rotate(0deg)";
+                        aThumbImg[i].style.borderWidth="1px";
+
+                        var oSpan=aThumbImg[i].getElementsByTagName('span')[0];
+                        oSpan.style.opacity=1;
+                        var imgURL;
+                        if(e.target.className==='ThumbImg'){
+                            imgURL=e.target.index;
+                        }else{
+                            imgURL=e.target.parentNode.index;
+                        }
+                        oSpan.style.backgroundImage="url(img/"+imgURL+".jpg)";
+                        oSpan.style.backgroundPosition=-Thumb_Width*aThumbImg[i].pos.col+"px "+(-Thumb_Height*aThumbImg[i].pos.row)+"px";
+
+                    }
+                }else{
+                    for (var i=0;i<NUM;i++){
+                        aThumbImg[i].style.left=(oThumbWidth+fColGap)*aThumbImg[i].pos.col+fColGap+"px";
+                        aThumbImg[i].style.top=(oThumbHeight+fRowGap)*aThumbImg[i].pos.row+fRowGap+"px";
+                        aThumbImg[i].style.transform="rotate("+(Math.random()*40-20)+"deg)";
+                        aThumbImg[i].style.borderWidth="5px";
+                        var oSpan=aThumbImg[i].getElementsByTagName('span')[0];
+                        oSpan.style.opacity=0;
+                    }
+                }
+                bFlag=!bFlag;
+            }
+
+
         }
     </script>
 </body>
