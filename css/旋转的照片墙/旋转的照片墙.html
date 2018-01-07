@@ -46,7 +46,11 @@
             display: block;
             position: absolute;
             opacity: 0;
-
+            -webkit-transition: all 1s ease ;
+            -moz-transition: all 1s ease ;
+            -ms-transition: all 1s ease ;
+            -o-transition: all 1s ease ;
+            transition: all 1s ease ;
 
         }
         #prev,#next{
@@ -59,6 +63,8 @@
             margin-top: -30px;
             text-align: center;
             line-height: 55px;
+            display: none;
+            cursor: pointer;
 
         }
         #prev{
@@ -87,6 +93,9 @@
         var Thumb_Width=125,Thumb_Height=125,Big_Width=750,Big_Height=500;
         var count=0;
         var oContainer= document.getElementById('container');
+        var oPrev=document.getElementById('prev');
+        var oNext=document.getElementById('next');
+        var iNowIndex=1;
         //把图片都加载完成
         for (var i=0;i<NUM;i++){
             var oImg=new Image();
@@ -167,6 +176,9 @@
                         oSpan.style.backgroundImage="url(img/"+imgURL+".jpg)";
                         oSpan.style.backgroundPosition=-Thumb_Width*aThumbImg[i].pos.col+"px "+(-Thumb_Height*aThumbImg[i].pos.row)+"px";
 
+                        oPrev.style.display=oNext.style.display="block";
+                        iNowIndex=imgURL;
+                        oSpan.style.transitionDelay="0ms";
                     }
                 }else{
                     for (var i=0;i<NUM;i++){
@@ -176,12 +188,38 @@
                         aThumbImg[i].style.borderWidth="5px";
                         var oSpan=aThumbImg[i].getElementsByTagName('span')[0];
                         oSpan.style.opacity=0;
+
+                        oPrev.style.display=oNext.style.display="none";
+                        oSpan.style.transitionDelay="0ms";
                     }
                 }
                 bFlag=!bFlag;
             }
-
-
+        };
+        oNext.onclick=oPrev.onclick=function(){
+            if(this === oNext){
+                iNowIndex++;
+               if (iNowIndex==NUM+1){
+                   iNowIndex=1;
+               }
+            }else{
+                iNowIndex--;
+                if (iNowIndex==0){
+                    iNowIndex=NUM;
+                }
+            }
+            var arr=[];
+            for (var i=0;i<NUM;i++){
+                arr.push(i);
+            }
+            arr.sort(function () {
+                return Math.random()-0.5;
+            });
+            for(var i=0;i<arr.length;i++){
+                var oSpan=aThumbImg[arr[i]].getElementsByTagName('span')[0];
+                oSpan.style.transitionDelay=(i+1)*30+"ms";
+                oSpan.style.backgroundImage="url(img/"+iNowIndex+".jpg)"
+            }
         }
     </script>
 </body>
