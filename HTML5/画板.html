@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>画板</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        canvas{
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="cvs" width="500px" height="500px"></canvas>
+    <script>
+        var oCvs=document.getElementById('cvs');
+        var ctx=oCvs.getContext('2d');
+        oCvs.onmousedown=function (e) {
+            ctx.beginPath();
+            ctx.moveTo(e.clientX,e.clientY);
+            oCvs.onmousemove=function (e) {
+                ctx.lineTo(e.clientX,e.clientY);
+                ctx.strokeStyle='#f00';
+                ctx.stroke();
+            };
+            oCvs.onmouseup=function () {
+                oCvs.onmousemove=null;
+            }
+        }
+    </script>
+</body>
+</html>
