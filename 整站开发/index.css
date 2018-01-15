@@ -1,0 +1,99 @@
+#nav{
+    height: 120px;
+}
+#nav .wrapper{
+    background: url("img/logo.png") no-repeat left center;
+}
+#nav ul{
+    position: absolute;
+    left: 354px;
+    top: 60px;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+#nav li{
+    float: left;
+    font-size: 12px;
+    color: #626262;
+}
+#nav span{
+    width: 1px;
+    height: 14px;
+    float: right;
+    margin: 0 25px;
+    background: url("img/spilte.png");
+}
+#search{
+    height: 30px;
+    width: 130px;
+    position: absolute;
+    right: 0;
+    top: 60px;
+    border: 0;
+    background: #f1f3f6;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    text-indent: 5px;
+}
+#search-icon {
+    width: 10px;
+    height: 12px;
+    position: absolute;
+    right: 11px;
+    top: 60px;
+    transform: translateY(-50%);
+    overflow: hidden;
+}
+#search-icon img{
+    position: absolute;
+    left: -5px;
+    top: 0;
+}
+#banner{
+    height: 460px;
+    background: url("img/banner-bg.png");
+}
+#banner-title{
+    position: absolute;
+    left:136px;
+    top: 46px;
+    font-size: 34px;
+    color: #fff;
+}
+#learn{
+    width: 180px;
+    height: 50px;
+    background: #00aeff;
+    border-radius: 5px;
+    position: absolute;
+    left: 700px;
+    top: 40px;
+    font-size: 18px;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+
+}
+#banner img{
+    position: absolute;
+    bottom: 28px;
+    left: 236px;
+}
+#banner .prev{
+    position: absolute;
+    left: 15px;
+    top: 230px;
+    transform: translateX(-50%);
+}
+#banner .next{
+    position: absolute;
+    left: 990px;
+    top: 230px;
+    transform: translateX(-50%);
+}
