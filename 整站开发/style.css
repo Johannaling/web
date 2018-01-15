@@ -1,0 +1,19 @@
+*{
+    margin:0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+span{
+    margin: 0;
+}
+body{
+    position: relative;
+}
+.wrapper{
+    width: 1004px;
+    height:100% ;
+    margin: 0 auto;
+    position: relative;
+}
