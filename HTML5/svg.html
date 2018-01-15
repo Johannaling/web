@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>svg</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #sec{
+            stroke-dashoffset: 0;
+            stroke-dasharray: 628;
+            -webkit-transition: stroke-dashoffset 1s linear;
+            -moz-transition: stroke-dashoffset 1s linear;
+            -ms-transition: stroke-dashoffset 1s linear;
+            -o-transition: stroke-dashoffset 1s linear;
+            transition: stroke-dashoffset 1s linear;
+        }
+        #container{
+            position: relative;
+        }
+        #time{
+            width: 80px;
+            height: 80px;
+            font-size: 80px;
+            text-align: center;
+            line-height: 80px;
+            position: absolute;
+            top: 75px;
+            left: 75px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <svg id="svg" width="400" height="400">
+            <circle cx="120" cy="120" r="100" stroke="#43AEFA" stroke-width="20" fill="#fff"></circle>
+            <circle id="sec" cx="120" cy="120" r="100" stroke="#F4F1F1" stroke-width="20" fill="transparent"></circle>
+        </svg>
+        <div id="time">10</div>
+    </div>
+</body>
+<script>
+    let oSec=document.querySelector('#sec');
+    let oTime=document.querySelector('#time');
+    let timer;
+    let t=10;
+    timer=setInterval(function () {
+        oTime.innerHTML=t;
+        t--;
+        if (t<0){
+            clearInterval(timer);
+        }else{
+            oSec.style.strokeDashoffset=628*t/10-628;
+        }
+    },1000);
+</script>
+</html>
