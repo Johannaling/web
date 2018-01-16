@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>响应式页面</title>
+    <meta name="viewpoint" content="width=device-width">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        html,body{
+            height: 100%;
+            width: 100%;
+        }
+
+        header,nav,footer{
+            height: 100px;
+            width: 960px;
+            background: #aabbcc;
+            font-size: 2rem;
+            color: #898a8e;
+            text-align: center;
+            line-height: 100px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+
+        }
+        #banner{
+            width: 960px;
+            margin: 0 auto;
+        }
+        #banner img{
+            width: 960px;
+        }
+        article{
+            width: 960px;
+            height: 200px;
+            margin: 0 auto;
+
+        }
+        #left{
+            width:700px ;
+            height: 200px;
+            float: left;
+            background: #ffff00;
+            display: table;
+
+        }
+         p{
+             text-align: center;
+            display: table-cell;
+             vertical-align:middle;
+        }
+        #right{
+            width: 230px;
+            height: 200px;
+            float: right;
+            background: #ff0000;
+            display: table;
+        }
+        @media(max-width:960px){
+            header,nav,footer{
+                width: 100%;
+            }
+            #banner,#banner img{
+                width: 100%;
+            }
+            article{
+                width: 100%
+            }
+            #left,#right{
+                width: 100%;
+            }
+        }
+        /*@media(max-width:559px){
+            header,nav{
+                width: 100%;
+            }
+            #banner,#banner img{
+                width: 100%;
+
+            }
+            #left,#right{
+                width: 100%;
+            }
+
+        }*/
+
+
+    </style>
+</head>
+<body>
+    <header>header</header>
+    <nav>nav</nav>
+
+    <div id="banner"><img src="img/01.jpg" alt=""></div>
+    <article>
+        <section id="left"><p>Two parents have been arrested in California after police found 13 people allegedly being held captive at their home, including some "shackled to their beds with chains and padlocks".</p></section>
+        <section id="right"><p>Officers were alerted by one of the victims, who on Sunday managed to escape and call the emergency number "from a cellular device she found inside the house", the Riverside Sheriff's Department said in a statement.</p></section>
+    </article>
+    <footer>footer</footer>
+</body>
+</html>
