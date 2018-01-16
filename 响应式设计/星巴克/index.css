@@ -1,0 +1,129 @@
+nav{
+    display: flex;
+    height: 100px;
+    background: #fff;
+}
+#nav-menu,#login{
+    flex-grow: 5;
+    margin: 0 15px;
+}
+#nav-menu{
+    position: relative;
+}
+#nav-menu img{
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+#nav-menu span{
+    position: absolute;
+    left: 22px;
+    top: 60px;
+    font-size: 12px;
+    cursor: pointer;
+}
+#nav-logo{
+    flex-grow: 2;
+    position: relative;
+}
+#nav-logo img{
+    width: 73px;
+    height: 73px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    cursor: pointer;
+}
+#login .club{
+    position: absolute;
+    right: 20px;
+    line-height: 80px;
+}
+#login .load{
+    position: absolute;
+    right: 20px;
+    line-height: 120px;
+}
+#login a{
+    color: #b89f7a;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+}
+/*菜单*/
+#wrapper{
+    position: absolute;
+    top:0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(112,112,112,0.5);
+}
+#nav-next-menu{
+    width: 270px;
+    height: 100%;
+    background: #000000;
+    position:absolute ;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+}
+/*.bg{
+    position: absolute;
+    width: 270px;
+    top: 0;
+    bottom: 0;
+    background: #000000;
+}*/
+.nav-client{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(112,112,112,.5);
+}
+.nav-menu-list{
+    padding-top: 10px;
+}
+.nav-client a{
+    width: 223px;
+    height: 27px;
+    color: #b89f7a;
+    display: block;
+    margin: 10px 15px;
+}
+.nav-menu-list a{
+    width: 223px;
+    height: 27px;
+    color: #fff;
+    display: block;
+    margin: 10px 15px;
+    position: relative;
+}
+.show-after{
+    width: 0;
+    height: 0;
+    border-top: 4px dashed ;
+    border-left: 4px solid transparent;
+    border-right:4px solid transparent;
+    border-bottom: 4px solid transparent;
+    position: absolute;
+    right: 10px;
+    top: 0;
+    display: block;
+}
+.nav-client a:hover{
+    color:#fff ;
+}
+.nav-menu-list a:hover{
+    color: #b89f7a;
+}
