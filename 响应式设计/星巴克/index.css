@@ -69,15 +69,19 @@ nav{
     bottom: 0;
     right: 0;
     background: rgba(112,112,112,0.5);
+    display: none;
+
 }
 #nav-next-menu{
-    width: 270px;
+    /*width: 270px;*/
+    width: 0;
     height: 100%;
-    background: #000000;
+    background: rgb(0,0,0);
     position:absolute ;
     left: 0;
     top: 0;
-    overflow: hidden;
+    overflow: scroll;
+
 }
 /*.bg{
     position: absolute;
@@ -99,14 +103,14 @@ nav{
     height: 27px;
     color: #b89f7a;
     display: block;
-    margin: 10px 15px;
+    margin: 20px 15px;
 }
 .nav-menu-list a{
     width: 223px;
     height: 27px;
     color: #fff;
     display: block;
-    margin: 10px 15px;
+    margin: 20px 15px;
     position: relative;
 }
 .show-after{
@@ -126,4 +130,62 @@ nav{
 }
 .nav-menu-list a:hover{
     color: #b89f7a;
+}
+/*banner*/
+/*#banner{
+    position: relative;
+    width: 100%;
+}*/
+#banner .pc,#banner .mobile{
+    position: absolute;
+    cursor: pointer;
+}
+#banner .mobile{
+    display: none;
+}
+#banner .pc{
+    width:100%;
+}
+#banner .ads{
+    background: #47474A;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 900;
+    padding: 0 5px;
+    position: absolute;
+    right: 32px;
+    top: 120px;
+    font-size: 12px;
+}
+#banner .know {
+    position: absolute;
+    right: 25px;
+    top: 45rem;
+}
+#banner .know a{
+    /*display: block;*/
+   /* position: absolute;
+    right: 25px;
+    bottom: 20px;*/
+    font-size: 18px;
+    color:red;
+    text-align: center;
+
+}
+@media(max-width: 992px){
+    #banner .pc{
+        width: 100%;
+    }
+    /*#banner .know a{
+        position: absolute;
+        right: 25px;
+        bottom: -22%;
+        top: auto;
+    }*/
+}
+@media(max-width: 768px){
+    #banner .mobile{
+        display: block;
+        width: 100%;
+
+    }
 }
