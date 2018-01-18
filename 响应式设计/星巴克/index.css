@@ -83,13 +83,6 @@ nav{
     overflow: scroll;
 
 }
-/*.bg{
-    position: absolute;
-    width: 270px;
-    top: 0;
-    bottom: 0;
-    background: #000000;
-}*/
 .nav-client{
     padding-top: 10px;
     padding-bottom: 10px;
@@ -133,10 +126,6 @@ nav{
 }
 /*banner*/
 
-/*#banner{
-    position: relative;
-    width: 100%;
-}*/
 #banner .pc,#banner .mobile{
 
     cursor: pointer;
@@ -185,32 +174,33 @@ article{
 }
 article .wrap{
     width: 780px;
-    height: 220px;
     margin: 0 auto;
+    background: #000000;
 }
 
 article .rewords {
-    /*height: 220px;*/
+    height: 220px;
     /*background: url(img/rewards_bg.png) 20rem rem no-repeat;*/
     width: 260px;
-    padding-left:90px ;
+    padding-left:110px ;
     padding-top: 80px;
     padding-bottom: 50px;
     margin: 0;
     display: inline-block;
-
+    box-sizing: border-box;
     font-size: 18px;
 }
 article .rewords img{
     width: 160px;
 }
 article .context {
+    height: 220px;
+    width: 430px;
     box-sizing: border-box;
-    display: inline-block;
-    margin-bottom: 40px;
-    height: 100%;
-    position: absolute;
-    top: 40px;
+    float: right;
+    padding-top: 40px;
+    /*display: inline-block;*/
+    /*position: absolute;*/
 }
 article .context span:first-child{
     font-size: 25px;
@@ -241,25 +231,27 @@ article span{
 
 @media(max-width: 992px){
     #banner .pc{
-        width: 100%;
-    }
-    /*#banner .know a{
-        position: absolute;
-        right: 25px;
-        bottom: -22%;
-        top: auto;
-    }*/
-}
-@media(max-width: 768px){
-    #banner .pc{
         display: none;
     }
     #banner .mobile{
         display: block;
         width: 100%;
-
-
     }
+
+}
+@media(max-width: 768px){
+    article{
+        height: 490px;
+    }
+    article.wrap{
+        height: 490px;
+        width: 100%;
+    }
+    article .rewords,article .context{
+        width: 100%;
+    }
+
+
 }
 
 
