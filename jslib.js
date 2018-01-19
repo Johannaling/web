@@ -104,3 +104,22 @@ function removeEvent(elem, type, handler) {
         elem['on' + type] = null;
     }
 }
+
+
+//startsWidth
+String.prototype.sw = function (str) {
+    if (this.indexOf(str) == 0) {
+        return true;
+    }
+    return false;
+};
+console.log(str.sw('hhello'));
+
+//endsWidth
+String.prototype.ew = function(str){
+    if(this.indexOf(str) == this.length - str.length){
+        return true;
+    }
+    return false;
+};
+console.log(str.ew('world1'));
