@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>promise</title>
+</head>
+<body>
+<script>
+
+    let p1=new Promise(function (resolve,reject) {
+        $.get('a.json',{},function (res) {
+            console.log(res);
+            if(res.a){
+                resolve(res);
+            }else{
+                reject(res);
+            }
+        });
+    }).then(function (resa){
+        new Promise(function (resolve,reject) {
+            $.get('b.json',{},function (resb) {
+                console.log(resb);
+                resolve();
+            });
+            return getPromise('b.json');
+        })
+    },function () {
+        console.log("失败");
+    }).then(function () {
+        $.get('c.json',{},function (resc) {
+            console.log(resc);
+            resolve();
+        })
+    })
+</script>
+
+</body>
+</html>
