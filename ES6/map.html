@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>map</title>
+</head>
+<body>
+<script>
+    let m1 = new Map();
+    m1.set(1, 'zs');// 输出 Map(1){1 => 'zs'}
+    m1.set({name:'zs'}, 'xx');//输出 Map(1){{...}=> 'xx'}
+
+    let m1 = new Map();
+    m1.set({name:'zs'}, 'xx');
+    for(let [index, item] of m1.entries()){
+        console.log(index,item);//{name:'zs'} 'xx'
+    }
+
+    let wm = new WeakMap();
+    wm.set(null,'yy');// null typeof object
+    console.log(vm);// WeakMap{{}=> 'yy'}
+</script>
+
+</body>
+</html>
