@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*let myName='zhangsan';
+    let n='name';
+    let obj={
+        [n]:myName,
+        age:18,
+    };
+    console.log(obj);*/
+   /* let name='zs';
+    let age=18;
+    let obj={
+        name,
+        age,
+        showName(){
+
+        }
+    };*/
+/*    console.log(-0 === +0);//true
+    console.log(Object.is(+0, -0));//false
+
+    console.log(NaN === NaN);// false
+    console.log(Object.is(NaN, NaN));//true
+
+    let obj1={
+        name:'zs'
+    };
+    let obj2={
+        name:'zs'
+    };
+    console.log(obj1 === obj2);// false*/
+let obj1={
+    name:'zs',
+    age:18,
+    dad:{
+        name:'zhenger',
+        age:40,
+    }
+};
+let obj2={
+    name:'lisi',
+    school:'xx',
+};
+let obj3={...obj1, ...obj2};
+obj1.dad.age = 41;
+obj2.shool='yy';
+console.log(obj3);//dad{age:41} obj1{school:yy}
+Object.assign(obj1, obj2);
+console.log(obj1);//同上
+
+</script>
+</body>
+</html>
