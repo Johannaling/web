@@ -1,0 +1,50 @@
+#div1 {
+  background: #ff0; }
+  #div1 .aa {
+    width: 200px; }
+  #div1hover {
+    background: #000000; }
+
+#div2, #div3 {
+  width: 100px;
+  height: 200px; }
+
+#div4 {
+  background: #ff0; }
+
+.item-1 {
+  width: 100px; }
+
+.item-2 {
+  width: 200px; }
+
+.item-3 {
+  width: 300px; }
+
+.item-4 {
+  width: 400px; }
+
+.item-5 {
+  width: 500px; }
+
+.icon-close {
+  background: url("img/close.jpg"); }
+
+.icon-open {
+  background: url("img/open.jpg"); }
+
+.icon-buy {
+  background: url("img/buy.jpg"); }
+
+.icon-tip {
+  background: url("img/tip.jpg"); }
+
+#div5 {
+  width: 40500px; }
+
+/*$m:(light: #fff,dark:#000);
+#div2{
+  background: map_get($m,key);
+}*/
+
+/*# sourceMappingURL=index.css.map */
