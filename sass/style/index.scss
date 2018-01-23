@@ -1,0 +1,54 @@
+$color:#ff0;
+$w:200px;
+$sw:width;
+#div1{
+  background: $color;
+  .aa{
+    #{$sw}: 200px;
+  }
+  &hover{
+    background: #000000;
+  }
+}
+@mixin xx($w,$h){
+  width:$w;
+  height:$h;
+}
+#div2 {
+  @include xx($w:100px, $h:200px);
+}
+#div3{
+  @extend #div2
+}
+$type:3;
+#div4{
+  @if $type==3{
+    background: #ff0;
+  }@else{
+    background: #ff0000;
+  }
+}
+$i:5;
+@for $i from 1 through 5{
+  .item-#{$i}{
+    width:$i*100px;
+  }
+}
+
+@each $icon in close,open,buy,tip{
+  .icon-#{$icon}{
+    background: url('img/#{$icon}.jpg');
+  }
+}
+$width:200px;
+@function length($n){
+  @return $n+$width*200;
+}
+#div5{
+  width:length(500);
+}
+
+/*$m:(light: #fff,dark:#000);
+#div2{
+  background: map_get($m,key);
+}*/
