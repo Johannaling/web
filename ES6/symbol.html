@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // string number boolen null undefined symbol
+    let obj ={
+        name: 'zs',
+        age: 18,
+    };
+    let name = Symbol();
+    obj[name] = 'xx';
+    console.log(obj);//{name:'zs',age:18,Symbol():'xx'}
+</script>
+
+</body>
+</html>
