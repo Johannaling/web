@@ -1,0 +1,19 @@
+#div1 {
+  width: 200px;
+  height: 200px;
+  background: #ff0000;
+}
+
+#div2 {
+  width: 400px;
+  height: 400px;
+  background: url(http://127.0.0.1:8081/img/63195af45c078c0b133c39d685f93c0a.jpg) no-repeat;
+  -webkit-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+
+#div4 {
+  width: 200px;
+  height: 200px;
+  background: #F00;
+}

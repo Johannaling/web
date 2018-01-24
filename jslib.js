@@ -123,3 +123,14 @@ String.prototype.ew = function(str){
     return false;
 };
 console.log(str.ew('world1'));
+
+// 数组去重
+function set() {
+    let newArr = [];
+    for(let item of arr){
+        if( !newArr.includes(item)){
+            newArr.push(item);
+        }
+    }
+    return newArr;
+}

@@ -1,0 +1,14 @@
+#div1 {
+    width: 200px;
+    height: 200px;
+    background: #ff0000;
+}
+#div2 {
+    width: 400px;
+    height: 400px;
+    background:url(../img/1.jpg) no-repeat;
+    transform: rotate(30deg);
+}
+#abc{
+    width: 200px;
+}
