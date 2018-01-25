@@ -7,6 +7,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const glob = require('glob');
 const PurifyCSSPlugin=require('purifycss-webpack');
+const webpack=require('webpack');
 module.exports={
     entry:{
         index:'./src/index.js'
@@ -34,7 +35,8 @@ module.exports={
         new UglifyJsPlugin(),
         new PurifyCSSPlugin({
             paths: glob.sync(path.join(__dirname, 'src/*.html')),
-        })
+        }),
+        new webpack.BannerPlugin('Hello World!'),
     ],
     module:{
         rules:[
