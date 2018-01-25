@@ -36,8 +36,13 @@ module.exports={
             paths: glob.sync(path.join(__dirname, 'src/*.html')),
         }),
         new webpack.BannerPlugin('Hello World!'),
-        new webpack.ProvidePlugin({
-            $: "jquery"
+         new webpack.ProvidePlugin({
+             $: "jquery"
+        }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'jquery',
+            filename: "assets/js/jquery.js",
+            minChunks: 2
         })
     ],
     module:{

@@ -1,4 +1,5 @@
 const index = {
-    index: './src/index.js'
+    index: './src/index.js',
+    jquery: 'jquery'
 };
 module.exports= index;
