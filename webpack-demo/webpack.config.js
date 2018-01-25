@@ -36,6 +36,9 @@ module.exports={
             paths: glob.sync(path.join(__dirname, 'src/*.html')),
         }),
         new webpack.BannerPlugin('Hello World!'),
+        new webpack.ProvidePlugin({
+            $: "jquery"
+        })
     ],
     module:{
         rules:[

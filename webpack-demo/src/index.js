@@ -22,3 +22,5 @@ class People{
 
     }
 }
+
+$('#div2').html('test jquery plugin');
