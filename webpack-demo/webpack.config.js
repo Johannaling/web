@@ -40,8 +40,8 @@ module.exports={
              $: "jquery"
         }),
         new webpack.optimize.CommonsChunkPlugin({
-            name: 'jquery',
-            filename: "assets/js/jquery.js",
+            name: ['jquery', 'vue'],
+            filename: "assets/js/[name].js",
             minChunks: 2
         })
     ],
