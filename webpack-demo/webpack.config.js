@@ -8,10 +8,9 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const glob = require('glob');
 const PurifyCSSPlugin=require('purifycss-webpack');
 const webpack=require('webpack');
+const index = require('./webpack_config/entry_webpack.js');
 module.exports={
-    entry:{
-        index:'./src/index.js'
-    },
+    entry: index,
     output:{
         path:path.resolve(__dirname,'dist'),
         filename:'[name].js',
