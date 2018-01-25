@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="obj in arr">
+                <div > 
+                    <!-- <span v-text="obj"></span> -->
+                    {{obj.name}} {{obj.age}} {{obj.company}} 
+                    <span v-if= "obj.where==true" v-text= "msg"></span>
+                    <span v-else= "obj.where==false"></span>
+                </div>
+                
+            </li>
+        </ul>
+    </div>
+
+
+
+    <script src="vue.js"></script>
+    <script>
+        let nw = new Vue({
+            el: '#app',
+            data: {
+                y: true,
+                arr:[{
+                    name: "zs",
+                    age: 20,
+                    company: "ali",
+                    where: true,
+                },{
+                    name: "ls",
+                    age: 18,
+                    company: "baidu",
+                    where: false,
+                },{
+                    name: 'ww',
+                    age: 35,
+                    company: "tencent",
+                    where: false,
+
+                }],
+                msg: "是在杭州",
+                
+            }
+        })
+    </script>
+</body>
+</html>
