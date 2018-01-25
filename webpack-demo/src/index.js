@@ -23,4 +23,6 @@ class People{
     }
 }
 
+let json=require('../author.json');
 $('#div2').html('test jquery plugin');
+$('#div5').html(`作者是：${json.name}, 年龄：${json.age}, 公司：${json.company}`);
