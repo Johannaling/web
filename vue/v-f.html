@@ -9,7 +9,7 @@
 <body>
     <div id="app">
         <ul>
-            <li v-for="obj in arr">
+            <li v-for="obj in arrSort">
                 <div > 
                     <!-- <span v-text="obj"></span> -->
                     {{obj.name}} {{obj.age}} {{obj.company}} 
@@ -46,8 +46,14 @@
                     where: false,
 
                 }],
-                msg: "是在杭州",
-                
+                msg: "是在杭州"
+            },
+            computed: {
+                arrSort(){
+                    return this.arr.sort(function(a,b) {
+                        return a.age - b.age;
+                    })
+                }
             }
         })
     </script>
