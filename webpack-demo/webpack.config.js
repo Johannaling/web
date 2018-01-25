@@ -9,6 +9,7 @@ const glob = require('glob');
 const PurifyCSSPlugin=require('purifycss-webpack');
 const webpack=require('webpack');
 const index = require('./webpack_config/entry_webpack.js');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports={
     entry: index,
     output:{
@@ -36,14 +37,18 @@ module.exports={
             paths: glob.sync(path.join(__dirname, 'src/*.html')),
         }),
         new webpack.BannerPlugin('Hello World!'),
-         new webpack.ProvidePlugin({
+        new webpack.ProvidePlugin({
              $: "jquery"
         }),
         new webpack.optimize.CommonsChunkPlugin({
             name: ['jquery', 'vue'],
             filename: "assets/js/[name].js",
             minChunks: 2
-        })
+        }),
+        new CopyWebpackPlugin([{
+            from: __dirname + '/src/public',
+            to: './public'
+        }])
     ],
     module:{
         rules:[
