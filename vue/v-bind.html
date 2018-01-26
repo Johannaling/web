@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-bind</title>
+    <style>
+        .aa{
+            width: 200px;
+            height: 200px;
+            background: #ffff00;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <img :src="imgSrc" alt="">
+        <div :class="{aa:isAa}" ></div>
+        <div :style="{fontSize:size+'px'}">run</div>
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                imgSrc: 'https://cn.vuejs.org/images/logo.png',
+                cn: 'aa',
+                isAa: true,
+                size: '20'
+            }
+        })
+    </script>
+</body>
+</html>
