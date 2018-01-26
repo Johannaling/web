@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-model</title>
+</head>
+<body>
+    <div id="app">
+        <form action="">
+            用户名：<input type="text" v-model.lazy.trim="username">
+            <h4>用户名是：{{ username }}</h4>
+            性别：<input type="radio" v-model="sex" value="男">男
+            <input type="radio" v-model="sex" value="女">女
+            <h4>性别是：{{ sex }}</h4>
+            爱好：
+            <input type="checkbox" v-model="hobbys" value="篮球">篮球
+            <input type="checkbox" v-model="hobbys" value="羽毛球">羽毛球
+            <input type="checkbox" v-model="hobbys" value="台球">台球
+            <h4>爱好是：{{ hobbys }}</h4>
+            学校：
+            <select name="" id="" v-model="school">
+                <option value="农大">农大</option>
+                <option value="金融">金融</option>
+                <option value="黑大">黑大</option>
+            </select>
+            <h4>学校是：{{ school }}</h4>
+            自我介绍：<textarea name="" id="" cols="30" rows="10" v-model="instroduce"></textarea>
+            <h4>我的自我介绍是:{{ instroduce }}</h4>
+        </form>
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                username:'',
+                sex:'',
+                hobbys:[],
+                school:'黑大',
+                instroduce:'',
+            },
+        })
+    </script>
+</body>
+</html>
