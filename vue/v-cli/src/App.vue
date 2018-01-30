@@ -15,6 +15,7 @@
        <router-link to='/home'>redirect</router-link>
        <router-link to='/redirectparam/6/ww'>redirectparam</router-link>
        <router-link to='/abc'>alias</router-link>
+       <router-link to="Count">vuex</router-link>
     </div>
     <transition name='fade' mode='out-in'>
        <router-view/>

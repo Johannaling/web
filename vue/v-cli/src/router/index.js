@@ -6,7 +6,7 @@ import test1 from '@/components/test1'
 import test2 from '@/components/test2'
 import testUrl from '@/components/testUrl'
 import error404 from '@/components/error404'
-
+import Count from '@/components/Count'
 Vue.use(Router);
 
 export default new Router({
@@ -46,6 +46,9 @@ export default new Router({
     },{
       path: '*',
       component:error404
+    },{
+      path: '/Count',
+      component: Count
     }
 
   ]
