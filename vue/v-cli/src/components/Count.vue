@@ -6,11 +6,21 @@
   </div>
 </template>
 <script>
-  import store from '@/vuex/store'
+  import store from '@/vuex/store';
+  import {mapState} from 'vuex';
   export default{
-      data() {
+      /*data() {
           return {};
-      },
-    store
+      },*/
+    store,
+    /*computed:{
+        count(){
+            return this.$store.state.count;
+        }
+    }*/
+    /*computed:mapState({
+        count:state => state.count
+    })*/
+    computed:mapState(['count'])
   };
 </script>
