@@ -59,8 +59,8 @@
           }
         )
       },
-      getMovieDetail(){
-          this.$root.push('/moviedetail/${movieId}')
+      getMovieDetail(movieId){
+          this.$router.push(`/moviedetail/${movieId}`);
       }
     },
     created() {

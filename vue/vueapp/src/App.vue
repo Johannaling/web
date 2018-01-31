@@ -28,16 +28,16 @@
         switchTab(tabName){
           this.title=tabName;
           switch(tabName){
-            case 'movie':
+            case 'Movie':
                 this.bg='rgb(239,66,56)';
                 break;
-            case'music':
+            case'Music':
                 this.bg='rgb(0, 150, 136)';
                 break;
-            case'book':
+            case'Book':
               this.bg='rgb(121, 85, 72)';
               break;
-            case'photo':
+            case'Photo':
               this.bg='rgb(63, 81, 181)';
               break;
             default:
@@ -45,7 +45,7 @@
           }
         },
       home(){
-            this.switchTab('movie');
+            this.switchTab('Movie');
             this.$router.push('/')
       }
     }
