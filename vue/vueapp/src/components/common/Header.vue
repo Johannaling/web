@@ -1,6 +1,6 @@
 <template>
   <div class="head" :style="{background:bgColor}">
-    <span class="home">首页</span>
+    <span class="home" @click="$emit('home')">首页</span>
     <h2 class="title">
       <slot name="title"></slot>
     </h2>
@@ -16,7 +16,6 @@
 
 <style scoped>
 .head{
-  /*background: #ff6700;*/
   height: 1rem;
   position: fixed;
   width: 100%;
