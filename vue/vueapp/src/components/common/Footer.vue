@@ -28,8 +28,9 @@
     line-height: 1rem;
   }
   .footer li a{
-    color: #ccc;
+    color: rgba(53, 58, 59, 0.75);
     outline: none;
+    font-size: .35rem;
   }
   .footer li a.router-link-exact-active{
     color: #fff;

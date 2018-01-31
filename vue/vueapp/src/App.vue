@@ -3,7 +3,7 @@
     <common-header :bgColor="bg" @home="home">
       <span slot="title">{{ title }}</span>
     </common-header>
-    <router-view/>
+    <router-view class="content"></router-view>
     <common-footer @change="switchTab" :bgColor="bg"></common-footer>
   </div>
 </template>
@@ -21,7 +21,7 @@
     data(){
         return{
             title:'Movie',
-            bg:'rgb(33, 150, 243)'
+            bg:'rgb(239,66,56)'
         }
     },
     methods:{
@@ -29,7 +29,7 @@
           this.title=tabName;
           switch(tabName){
             case 'movie':
-                this.bg='rgb(33, 150, 243)';
+                this.bg='rgb(239,66,56)';
                 break;
             case'music':
                 this.bg='rgb(0, 150, 136)';
@@ -53,5 +53,7 @@
 </script>
 
 <style>
-
+  #app .content{
+    padding: 1rem 0;
+  }
 </style>
