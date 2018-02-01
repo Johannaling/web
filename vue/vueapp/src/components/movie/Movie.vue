@@ -35,7 +35,7 @@
       return{
         movieList:[],
         isLoading: true,
-        isEnd:false
+        isEnd:false,
       }
     },
     methods:{
@@ -68,14 +68,16 @@
     },
     mounted(){
         window.onscroll=()=>{
-            let scrollTop=document.documentElement.scrollTop;
+
+            let scrollTop=document.documentElement.scrollTop || document.body.scrollTop;
             let clientHeight=document.documentElement.clientHeight;
             let scrollHeight=document.documentElement.scrollHeight;
             if (scrollTop+clientHeight==scrollHeight){
-                this.isLoading=true;
+              this.isLoading=true;
               setTimeout(() => {
                 this.getMovieData();
               }, 1000);
+
             }
         }
     }
@@ -148,6 +150,8 @@
   .loading{
     width: 100%;
     text-align: center;
+    position: fixed;
+    bottom: 1rem;
   }
   .tip {
     text-align: center;
