@@ -20,7 +20,7 @@
   position: fixed;
   width: 100%;
   line-height: 1rem;
-  z-index: 1;
+  z-index: 2;
 }
 .title{
   position: absolute;
