@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style: none;
+        }
+        #app{
+            width: 600px;
+            height: 400px;
+            border: 1px solid;
+            position: relative;
+        }
+        #container img{
+            width: 600px;
+            height: 400px;
+        }
+        #tabs{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            margin-bottom: 5px;
+            margin-right: 5px;
+        }
+        #tabs li{
+            float: left;
+            border: 1px solid;
+            margin-right: 5px;
+            padding: 0 4px;
+            color: #fff;
+            cursor: pointer;
+        }
+        #tabs .selected{
+            background: #ff6700;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" @mouseover="mousein" @mouseover="mouseout">
+        <div id="container">
+            <img v-for="(item,index) in imgs"  :src="item" alt="" v-show="index == nowIndex">
+        </div>
+        <ul id="tabs">
+            <li @mouseover="nowIndex = index"  v-for="(item, index) in imgs.length" :class="{selected: index == nowIndex}">{{ item }}</li>
+        </ul>
+    </div>
+
+    <script src="../vue.js"></script>
+    <script>
+        new Vue({
+            el:'#app',
+            data: {
+                imgs:[
+                    'img/1.jpg',
+                    'img/2.jpg',
+                    'img/3.jpg',
+                    'img/4.jpg'
+                ],
+                nowIndex:0,
+                timer: null
+            },
+            methods: {
+                play(){
+                    this.timer=setInterval(() => {
+                        this.nowIndex++;
+                        if (this.nowIndex == this.imgs.length){
+                            this.nowIndex=0
+                        }
+                    },1000);
+                },
+                mousein(){
+                    clearInterval(this.timer)
+                },
+                mouseout(){
+                    this.play();
+                }
+            },
+            mounted(){
+                this.play()
+            }
+        })
+    </script>
+</body>
+</html>
