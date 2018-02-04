@@ -35,26 +35,21 @@
       return{
         movieList:[],
         isLoading: true,
-        isEnd:false,
+        isEnd:false
       }
     },
     methods:{
       getMovieData(){
         axios.get(
-          API_PROXY+`http://m.maoyan.com/movie/list.json?type=hot&offset=${this.movieList.length}&limit=10`
-        ).then(
-          res =>{
-            console.log(res);
+            API_PROXY+`http://m.maoyan.com/movie/list.json?type=hot&offset=${this.movieList.length}&limit=10`
+        ).then(res => {
             let list = res.data.data.movies;
             if (list.length<10){
                 this.isEnd=true;
             }
             this.movieList=this.movieList.concat(list);
             this.isLoading=false;
-          }
-
-        ).catch(
-          res => {
+          }).catch(res => {
             alert('数据丢了┌╏ º □ º ╏┐')
           }
         )
