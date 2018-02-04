@@ -1,7 +1,10 @@
 <template>
   <ul>
     <li v-for="item in billboard" :key="item.id" class="billboard">
-      <img :src="item.bg" alt="">
+      <router-link :to="'/musicalbum/' + item.id">
+        <img :src="item.bg" alt="">
+      </router-link>
+
     </li>
   </ul>
 </template>
@@ -16,7 +19,6 @@
     },
     created(){
         axios.get('/static/data/musiclist.json').then(res => {
-            console.log(res);
             this.billboard=res.data.albums;
       })
     }

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <aplayer autoplay :music="musiclist" v-if="loadSuccess" :showlrc="true" :mutex="true"></aplayer>
+    <aplayer  :music="musiclist" v-if="loadSuccess" :showlrc="true" :mutex="true"></aplayer>
   </div>
 </template>
 
