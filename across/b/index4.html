@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>b index4</title>
+</head>
+<body>
+<script>
+    window.onmessage=function (e) {
+        console.log(e.data);
+    };
+
+    window.parent.postMessage({
+        name:'lisi',
+        age:20
+    },'http://www.a.com/index4.com')
+</script>
+</body>
+</html>

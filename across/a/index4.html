@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>a index4</title>
+</head>
+<body>
+<iframe src="http://www.b.com/index4.html" frameborder="0" id="ifm"></iframe>
+
+<script>
+    let oIfm = document.querySelector('#ifm');
+    oIfm.onload=function () {
+        let win = oIfm.contentWindow;
+        win.postMessage({
+            name:'zs',
+            age: 18
+        },'http://www.b.com/index4.html');
+    };
+    window.onmessage=function (e) {
+        console.log(e.data);
+    };
+
+
+</script>
+</body>
+</html>
