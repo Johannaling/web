@@ -9,6 +9,14 @@
           </div>
           <div class="detail-content">
             <p class="detail-name">{{ detail.nm }}</p>
+            <div class="release-score" >
+
+              <img src="http://ms0.meituan.net/canary/img/star-full-new.png" alt="" class="sc" >
+
+
+              <img src="http:////ms0.meituan.net/canary/img/star-empty-new.png" alt="">
+              <p>{{ detail.sc }}</p>
+            </div>
             <p>{{ detail.dir }}</p>
             <p>{{ detail.cat }}</p>
             <p>{{ detail.src }}</p>
@@ -39,7 +47,10 @@
     data() {
       return {
         detail: {},
-        isLoading: true
+        isLoading: true,
+        score: 0,
+        num: 5,
+        /*starImg: */
       };
     },
     created() {
@@ -52,10 +63,27 @@
         .then(res => {
           this.detail = res.data.data.MovieDetailModel;
           this.isLoading = false;
+          console.log(this.detail);
         })
         .catch(res => {
           alert("error");
         });
+    },
+    computed: {
+      starScore(){
+          if (this.detail.sc>=8){
+              this.score = this.num;
+              return this.score;
+          }else if(this.detail.sc>=6){
+             return this.score = this.num-1;
+          }else if(this.detail.sc>=4){
+              return this.score = this.num-2;
+          }else if(this.detail.sc>=2){
+            return this.score = this.num-3;
+          }if(this.detail.sc>=0){
+            return this.score = this.num-4;
+        }
+      }
     }
 
   }
@@ -95,8 +123,8 @@
     width: 0;
     z-index: 1;
     border: 1px solid #fff;
-    margin-right: 0.2rem;
-    margin-left: 0.2rem;
+    margin: 0.2rem;
+
   }
   .detail-content {
     flex-grow: 2;
@@ -106,6 +134,7 @@
   }
   .detail-name {
     font-weight: bolder;
+    font-size: .34rem;
   }
 
   .detail h3 {
