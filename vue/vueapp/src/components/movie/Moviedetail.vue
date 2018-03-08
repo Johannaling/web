@@ -25,13 +25,14 @@
         </div>
       </div>
     <div class="detail-context">
+      <button class="detail-bt"><a href="" >立即购票</a></button>
+      <div>
+        <h3>简介</h3>
+        <div v-html="detail.dra" class="detail-intro"></div>
+      </div>
       <div class="detail-star">
         <h3>主演</h3>
         <p>{{ detail.star }}</p>
-      </div>
-      <div>
-        <h3>简介</h3>
-        <div v-html="detail.dra"></div>
       </div>
       <div class="loading" v-show="isLoading">
         <img src="../../assets/img/load.gif" alt="">
@@ -104,6 +105,7 @@
     right: 0;
     width: 100%;
     background-repeat: no-repeat;
+    z-index: 0;
   }
   .detail-info {
     /*display: flex;*/
@@ -131,6 +133,26 @@
     width: 0;
     z-index: 1;
     color: #fff;
+  }
+  .detail-bt{
+    display: block;
+    border-radius: 4px;
+    font-size: 16px;
+    background: #e54847;
+    text-align: center;
+    margin: .2rem;
+    padding: .2rem;
+    cursor: pointer;
+    line-height: 1;
+    text-decoration: none;
+    width: 93%;
+  }
+  .detail-bt a{
+    color: white;
+  }
+  .detail-intro{
+    font-size: .3rem;
+    margin: .2rem;
   }
   .detail-name {
     font-weight: bolder;
