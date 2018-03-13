@@ -49,6 +49,7 @@
             }
             this.movieList=this.movieList.concat(list);
             this.isLoading=false;
+            console.log(this.movieList);
           }).catch(res => {
             alert('数据丢了┌╏ º □ º ╏┐')
           }
