@@ -1,6 +1,7 @@
 <template>
   <div class="head" :style="{background:bgColor}">
     <span class="home" @click="$emit('home')">首页</span>
+    <span class="login" @click="$emit('login')">登录</span>
     <h2 class="title">
       <slot name="title"></slot>
     </h2>
@@ -32,5 +33,12 @@
 .home{
   color: #fff;
   margin-left: 0.1rem;
+  font-size: .3rem;
+}
+.login{
+  color: #fff;
+  margin-right: 0.1rem;
+  float: right;
+  font-size: .3rem;
 }
 </style>
