@@ -7,6 +7,9 @@ import Photo from '@/components/photo/Photo'
 import MovieDetail from '@/components/movie/Moviedetail'
 import Musicalbum from '@/components/music/Musicalbum'
 import PhotoDetail from '@/components/photo/PhotoDetail'
+import Login from '@/components/common/Login'
+import Register from '@/components/common/Register'
+import Buytickets from '@/components/movie/Buytickets'
 
 
 Vue.use(Router)
@@ -48,7 +51,20 @@ export default new Router({
     },{
       path:'/photodetail/:index',
       component: PhotoDetail
+    },{
+      path:'/login',
+      name:'login',
+      component: Login
+    },{
+      path:'/register',
+      name:'register',
+      component: Register
+    },{
+      path:'/buytickets',
+      name:'buytickets',
+      component:Buytickets
     }
+
 
   ]
 })
