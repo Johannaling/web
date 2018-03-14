@@ -9,14 +9,14 @@
           </div>
           <div class="detail-content">
             <p class="detail-name">{{ detail.nm }}</p>
-            <div class="release-score" >
+           <!-- <div class="release-score" >
 
               <img src="http://ms0.meituan.net/canary/img/star-full-new.png" alt="" class="sc" >
 
 
               <img src="http:////ms0.meituan.net/canary/img/star-empty-new.png" alt="">
               <p>{{ detail.sc }}</p>
-            </div>
+            </div>-->
             <p>{{ detail.dir }}</p>
             <p>{{ detail.cat }}</p>
             <p>{{ detail.src }}</p>
@@ -25,7 +25,7 @@
         </div>
       </div>
     <div class="detail-context">
-      <button class="detail-bt"><a href="" >立即购票</a></button>
+      <button class="detail-bt" @click="buy">立即购票</button>
       <div>
         <h3>简介</h3>
         <div v-html="detail.dra" class="detail-intro"></div>
@@ -70,7 +70,7 @@
           alert("error");
         });
     },
-    computed: {
+   /* computed: {
       starScore(){
           if (this.detail.sc>=8){
               this.score = this.num;
@@ -85,6 +85,11 @@
             return this.score = this.num-4;
         }
       }
+    },*/
+    methods:{
+        buy(){
+            this.$router.push('/buytickets')
+        }
     }
 
   }
@@ -105,7 +110,7 @@
     right: 0;
     width: 100%;
     background-repeat: no-repeat;
-    z-index: 0;
+
   }
   .detail-info {
     /*display: flex;*/
@@ -133,9 +138,13 @@
     width: 0;
     z-index: 1;
     color: #fff;
+    padding-top: .2rem;
+  }
+  .detail-context{
+
+    background: white;
   }
   .detail-bt{
-    display: block;
     border-radius: 4px;
     font-size: 16px;
     background: #e54847;
@@ -146,9 +155,11 @@
     line-height: 1;
     text-decoration: none;
     width: 93%;
+    z-index: 1;
+    color: white;
   }
   .detail-bt a{
-    color: white;
+
   }
   .detail-intro{
     font-size: .3rem;
@@ -165,8 +176,13 @@
   }
 
   .detail-star {
-    border-bottom: 1px solid #ccc;
 
+
+  }
+  .detail-star p{
+    font-size: .3rem;
+    margin: .2rem;
+    height: 1rem;
   }
   .loading {
     text-align: center;
