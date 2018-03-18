@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <common-header :bgColor="bg" @home="home">
+    <common-header :bgColor="bg" @home="home" @login="login">
       <span slot="title">{{ title }}</span>
     </common-header>
     <router-view class="content"></router-view>
@@ -47,6 +47,9 @@
       home(){
             this.switchTab('Movie');
             this.$router.push('/')
+      },
+      login(){
+          this.$router.push('/login')
       }
     }
   }
