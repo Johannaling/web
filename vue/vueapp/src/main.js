@@ -6,8 +6,9 @@ import router from './router'
 import  './assets/css/reset.css'
 import  './assets/js/rem.js'
 import VueTouch from 'vue-touch'
+/*import VueResource from 'vue-resource'
 
-Vue.use(VueTouch, {name: 'v-touch'});
+Vue.use(VueResource)*/
 
 Vue.config.productionTip = false
 
